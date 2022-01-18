@@ -35,6 +35,7 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
 
    ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="print.css" media="print">
 </head>
 <body style="background:#95a5a6;background-size: 100%">
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -63,10 +64,9 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
 </nav><br><br><br>
 <div class="container">
   <div class="card  w-75 mx-auto">
-  <div class="card-header text-center">
-    Transaction made against you account
-
-  </div>
+  <div class="text-center">
+        <button onclick="window.print();" class="btn btn-primary" id="print-btn">Print</button>
+      </div>
   <div> 
   <h6> Select Your Date</h6>
 
@@ -181,14 +181,11 @@ if(!isset($_SESSION['userId'])){ header('location:login.php');}
                 }
                   ?>
                 </tbody>
-                <div class="text-right">
-        <a href="print.php" class="btn btn-primary">Print</a>
-      </div>
               </table>
               <div class="card-footer text-muted text-center">
                 <?php echo bankname; ?>
               </div>
-
+      
         <?php
 
 
